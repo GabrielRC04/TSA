@@ -37,8 +37,9 @@ void lista_turmas(t_turmas turmas[], int q){
     }
 }
 
-int cadastro_disciplinas(){
-    
+int cadastro_disciplinas(t_turmas turmas[].disciplina[]){
+    printf("a");
+
 }
 
 int main() {
