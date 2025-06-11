@@ -37,13 +37,15 @@ void lista_turmas(t_turmas turmas[], int q){
     }
 }
 
+int cadastro_disciplinas(){
+    
+}
+
 int main() {
     t_turmas turmas[100]; 
     int quantidade;
     quantidade = cadastro_turmas(turmas);
     lista_turmas(turmas, quantidade);
-
-
     
 
     return 0;
