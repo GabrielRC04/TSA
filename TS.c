@@ -20,6 +20,51 @@ struct turmas{
 
 typedef struct turmas t_turmas;
 
+int cadastro_turmas(t_turmas turmas[]);
+void lista_turmas(t_turmas turmas[], int);
+int cadastro_disciplinas(t_turmas turmas[]);
+void lista_disciplinas(t_turmas turmas[],int);
+int cadastro_alunos(t_turmas turmas[]);
+void lista_alunos(t_turmas turmas[],int);
+
+
+int main() {
+    t_turmas turmas[30]; 
+    int seletor,qntturmas,qntalunos,qntdisc;
+
+    printf("## Sistema Academico ##\n1- Inserir turmas\n2- Listar turmas\n3- Inserir disciplinas\n4- Listar disciplinas\n5- Cadastrar alunos\n6- Listar alunos\n0- Sair do Programa\n");
+    printf("\nO que deseja fazer?");
+    scanf("%d",&seletor);
+
+    while(seletor>0){
+        switch (seletor) {
+            case 1:
+            qntturmas = cadastro_turmas(turmas);
+            break;
+            case 2:
+            lista_turmas(turmas, qntturmas);
+            break;
+            case 3:
+            qntdisc = cadastro_disciplinas(turmas);
+            break;
+            case 4:
+            lista_disciplinas(turmas,qntdisc);
+            break;
+            case 5:
+            qntalunos = cadastro_alunos(turmas);
+            break;
+            case 6:
+            lista_alunos(turmas,qntalunos);
+            break;
+        }
+        printf("\n## Sistema Academico ##\n1- Inserir turmas\n2- Listar turmas\n3- Inserir disciplinas\n4- Listar disciplinas\n5- Cadastrar alunos\n6- Listar alunos\n0- Sair do Programa\n");
+        printf("\nO que deseja fazer?");
+        scanf("%d",&seletor);
+    }
+
+    return 0;
+}
+
 int cadastro_turmas(t_turmas turmas[]){
     int q,i;
     printf("Quantas turmas deseja criar?");
@@ -102,42 +147,4 @@ void lista_alunos(t_turmas turmas[],int qntaln){
         printf("Telefone: %d\n",turmas[nturma].disciplinas[ndsc].alunos[i].telefone);
         printf("Matricula: %d\n",turmas[nturma].disciplinas[ndsc].alunos[i].matricula);
     }
-}
-
-
-int main() {
-    t_turmas turmas[30]; 
-    int seletor,qntturmas,qntalunos,qntdisc;
-
-    printf("## Sistema Academico ##\n1- Inserir turmas\n2- Listar turmas\n3- Inserir disciplinas\n4- Listar disciplinas\n5- Cadastrar alunos\n6- Listar alunos\n0- Sair do Programa\n");
-    printf("\nO que deseja fazer?");
-    scanf("%d",&seletor);
-
-    while(seletor>0 || seletor>9){
-        switch (seletor) {
-            case 1:
-            qntturmas = cadastro_turmas(turmas);
-            break;
-            case 2:
-            lista_turmas(turmas, qntturmas);
-            break;
-            case 3:
-            qntdisc = cadastro_disciplinas(turmas);
-            break;
-            case 4:
-            lista_disciplinas(turmas,qntdisc);
-            break;
-            case 5:
-            qntalunos = cadastro_alunos(turmas);
-            break;
-            case 6:
-            lista_alunos(turmas,qntalunos);
-            break;
-        }
-        printf("\n## Sistema Academico ##\n1- Inserir turmas\n2- Listar turmas\n3- Inserir disciplinas\n4- Listar disciplinas\n5- Cadastrar alunos\n6- Listar alunos\n0- Sair do Programa\n");
-        printf("\nO que deseja fazer?");
-        scanf("%d",&seletor);
-    }
-
-    return 0;
 }
